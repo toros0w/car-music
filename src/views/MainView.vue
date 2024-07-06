@@ -1,16 +1,16 @@
 <template>
   <div>
-    <MainHeaderLayout />
+    <MainSection />
   </div>
 </template>
 
 <script>
-import MainHeaderLayout from '@/layouts/MainHeaderLayout.vue'
+import MainSection from '@/sections/MainSection.vue'
 
 export default {
   name: 'MainView',
   components: {
-    MainHeaderLayout
+    MainSection
   }
 }
 </script>

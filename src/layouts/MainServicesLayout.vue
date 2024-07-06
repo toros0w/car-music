@@ -14,3 +14,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.header-info-none {
+  display: none;
+}
+</style>
