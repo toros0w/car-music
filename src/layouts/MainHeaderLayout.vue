@@ -18,7 +18,7 @@
         Lorem ipsum dolor sit amet, consectetur<br />
         adipiscing elit. Vitae orci urna amet penatibus.
       </p>
-      <MxBtn :text="'Наши услуги'" />
+      <MxBtn :text="'Наши услуги'" :customStyle="{ 'font-size': '24px' }" />
     </div>
     <div class="header-info-container">
       <!-- <MainHeaderInfo
