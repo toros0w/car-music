@@ -18,7 +18,7 @@
       />
     </div>
 
-    <SliderComponent />
+    <SliderComponent uniqueClass="slider2" />
   </div>
 </template>
 

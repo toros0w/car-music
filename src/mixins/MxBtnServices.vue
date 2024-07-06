@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'MxBtn',
+  name: 'MxBtnServices',
   props: {
     text: {
       type: String,
@@ -50,10 +50,10 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 65%;
+  width: 0%;
   height: 100%;
   background-color: #db3138;
-  transition: width 0.3s ease;
+  transition: width 0.5s ease;
   z-index: -1;
 }
 
