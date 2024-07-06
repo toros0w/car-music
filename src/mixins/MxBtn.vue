@@ -28,7 +28,7 @@ export default {
   font-weight: 600;
   line-height: 34px;
   letter-spacing: 5%;
-  width: 144px;
+  width: 169px;
   height: 61px;
   border: none;
   background-color: transparent;
@@ -47,7 +47,7 @@ export default {
   left: 0;
   width: 65%;
   height: 100%;
-  background-color: red;
+  background-color: #db3138;
   transition: width 0.3s ease;
   z-index: -1;
 }

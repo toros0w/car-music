@@ -20,30 +20,59 @@
       </p>
       <MxBtn :text="'Наши услуги'" />
     </div>
+    <div class="header-info-container">
+      <!-- <MainHeaderInfo
+        v-for="(info, index) in headerInfos"
+        :key="index"
+        :text="info.text"
+        :title="info.title"
+        :cls="cls"
+      /> -->
+    </div>
   </div>
+  <div class="container"></div>
 </template>
-
 
 <script>
 import MxDelimiter from '@/mixins/MxDelimiter.vue'
 import MxBtn from '@/mixins/MxBtn.vue'
+// import MainHeaderInfo from '@/components/MainHeaderInfo.vue'
 
 export default {
   name: 'MainHeaderLayout',
   components: {
     MxBtn,
     MxDelimiter
+    // MainHeaderInfo
+  },
+  props: {
+    cls: {
+      type: String,
+      required: false,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      headerInfos: [
+        { title: 'адрес:', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
+        { title: 'телефон:', text: '8 (812) 123-45-67' },
+        { title: 'Режим работы:', text: 'пн-пт : 10:00 - 20:00/сб-вск : 12:00 - 20:00' }
+      ]
+    }
   }
 }
 </script>
 
 <style scoped>
 @import url('/src/assets/base.css');
+
 .header {
   height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   background: url('../assets/img/HeaderBg.png');
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header-menu {
@@ -51,7 +80,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  min-width: 1350px;
+  width: 100%;
   max-width: 1350px;
   margin-left: auto;
   margin-right: auto;
@@ -73,13 +102,14 @@ export default {
   letter-spacing: 0.5px;
   font-family: 'ReformaGrotesk';
   font-weight: 400;
-  font-size: 22px;
+  font-size: 24px;
   height: 100%;
 }
 
 .nav-item:hover {
   color: #db3138;
 }
+
 .nav-item:active {
   color: #db3138;
 }
@@ -91,8 +121,9 @@ export default {
   height: 100%;
   cursor: pointer;
 }
+
 .header-content {
-  margin-top: 237px;
+  margin-top: 160px;
   display: flex;
   width: 485px;
   flex-direction: column;
@@ -101,6 +132,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 .header-content-title {
   font-size: 150px;
   font-family: 'ReformaGrotesk';
@@ -109,6 +141,7 @@ export default {
   line-height: 188px;
   margin-bottom: 8px;
 }
+
 .header-content-text {
   font-size: 40px;
   font-family: 'ReformaGrotesk';
@@ -118,5 +151,11 @@ export default {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.header-info-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto new lines */
+  width: 100%;
 }
 </style>
