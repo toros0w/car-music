@@ -1,16 +1,16 @@
 <template>
   <div>
-    <MainServicesLayout />
+    <ServicesSection />
   </div>
 </template>
 
 <script>
-import MainServicesLayout from '@/layouts/MainServicesLayout.vue'
+import ServicesSection from '@/sections/ServicesSection.vue'
 
 export default {
   name: 'MainView',
   components: {
-    MainServicesLayout
+    ServicesSection
   }
 }
 </script>
