@@ -1,6 +1,6 @@
 <template>
   <div class="parent-container">
-    <div class="container">
+    <div class="slider-container">
       <div class="swiper-container">
         <swiper
           ref="swiperRef"
@@ -17,7 +17,7 @@
         >
           <swiper-slide>
             <div class="slide-content">
-              <img src="/src/assets/img/MainSlide-1.jpg" alt="" width="636px" height="550px" />
+              <img src="/src/assets/img/3-slider-1.jpeg" alt="" width="636px" height="550px" />
             </div>
           </swiper-slide>
           <swiper-slide>
@@ -45,10 +45,30 @@
         </button>
       </div>
     </div>
+    <div class="info">
+      <SliderInfoComponent
+        :itemLogo="'src/assets/img/services-logo-1.svg'"
+        :title="'100% полироль axem'"
+        :text="'Pharetra in bibendum id id. Sit maecenas sollicitudin est, hendrerit in malesuada. Eu, et lacus nisi mus sagittis, rhoncus est dictum. Gravida lectus urna, arcu, sodales. Ac.'"
+        :itemDelim="'src/assets/img/MxDelimiter.svg'"
+      />
+      <SliderInfoComponent
+        :itemLogo="'src/assets/img/main-slider-icon-1.svg'"
+        :title="'выполняем работу четко по тз'"
+        :text="'Lorem nulla non nibh quis elit odio. Dui et ultricies duis mattis dictum et senectus nunc sodales. Tellus lorem risus etiam quam massa lobortis convallis laoreet. Nec.'"
+        :itemDelim="'src/assets/img/MxDelimiter.svg'"
+      />
+      <SliderInfoComponent
+        :itemLogo="'src/assets/img/services-logo-3.svg'"
+        :title="'у нас лучшие мастера'"
+        :text="'Posuere nam sodales ullamcorper bibendum justo maecenas at. Ultricies bibendum morbi tempor vehicula. Ultrices erat maecenas in id maecenas sed ipsum scelerisque. '"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import SliderInfoComponent from '@/components/SliderInfoComponent.vue'
 import { ref, onMounted } from 'vue'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
@@ -56,10 +76,10 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 export default {
-  name: 'SliderComponent',
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    SliderInfoComponent
   },
   setup() {
     const swiperRef = ref(null)
@@ -106,33 +126,32 @@ export default {
 
 <style scoped>
 .parent-container {
-  width: 1300px;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
   margin: 0 auto;
+  padding-top: 180px;
 }
 
-.container {
+.slider-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: wheat;
-  margin-top: 180px;
-  max-width: 636px; /* Обновлено для соответствия ширине слайда */
+  max-width: 636px;
 }
-.container:last-child {
-  padding-left: 100px;
-}
+
 .swiper-container {
-  width: 636px; /* Убедитесь, что ширина слайдера равна ширине изображений */
+  width: 636px;
 }
 
 .controllers-container {
+  margin-top: 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
   width: 100%;
+  justify-content: space-between;
 }
+
 .main-slider-info {
   color: #fff;
   font-size: 18px;
@@ -141,20 +160,26 @@ export default {
   letter-spacing: 0.5px;
   font-family: 'ReformaGrotesk';
   text-align: center;
-  flex: 1;
+  flex-grow: 1;
+  margin: 0 15px;
 }
+
 .main-custom-prev,
 .main-custom-next {
   background: none;
   border: none;
   cursor: pointer;
 }
+
 .main-custom-prev img,
 .main-custom-next img {
   display: block;
 }
-.slide-content {
-  text-align: center;
+
+.info {
+  max-width: 600px;
+  color: wheat;
+  padding-left: 30px;
 }
 .slide-content img {
   object-fit: cover;
