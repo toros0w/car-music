@@ -18,7 +18,7 @@
       />
     </div>
 
-    <SliderComponent uniqueClass="slider2" />
+    <SliderComponent :slides="slides1" swiperId="slider1" position="left" />
   </div>
 </template>
 
@@ -30,6 +30,24 @@ export default {
   components: {
     SliderInfoComponent,
     SliderComponent
+  },
+  data() {
+    return {
+      slides1: [
+        {
+          img: '/src/assets/img/MainSlide-1.jpg',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat.'
+        },
+        {
+          img: '/src/assets/img/MainSlide-2.jpg',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat.'
+        },
+        {
+          img: '/src/assets/img/MainSlide-3.jpg',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat.'
+        }
+      ]
+    }
   }
 }
 </script>

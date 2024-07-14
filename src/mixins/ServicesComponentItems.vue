@@ -5,6 +5,7 @@
       <h2 class="services-title">{{ title }}</h2>
       <p class="services-text">{{ text }}</p>
       <MxBtn
+        v-if="showButton"
         :customStyle="{
           width: '91px',
           height: '41px',
@@ -37,6 +38,10 @@ export default {
     text: {
       type: String,
       required: true
+    },
+    showButton: {
+      type: Boolean,
+      default: true
     }
   }
 }

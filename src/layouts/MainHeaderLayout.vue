@@ -12,13 +12,10 @@
       </div>
     </div>
     <div class="header-content">
-      <h1 class="header-content-title">CAR MUSC</h1>
-      <MxDelimiter />
-      <p class="header-content-text">
-        Lorem ipsum dolor sit amet, consectetur<br />
-        adipiscing elit. Vitae orci urna amet penatibus.
-      </p>
-      <MxBtn :text="'Наши услуги'" :customStyle="{ 'font-size': '24px' }" />
+      <h1 class="header-content-title" :style="customStyle">{{ title }}</h1>
+      <img src="/src/assets/img/MxDelimiter.svg" alt="" class="delim" />
+      <p class="header-content-text">{{ text }}</p>
+      <MxBtn :text="btnText" :customStyle="btnStyle" />
     </div>
     <div class="header-info-container">
       <!-- <MainHeaderInfo
@@ -34,15 +31,13 @@
 </template>
 
 <script>
-import MxDelimiter from '@/mixins/MxDelimiter.vue'
 import MxBtn from '@/mixins/MxBtn.vue'
 // import MainHeaderInfo from '@/components/MainHeaderInfo.vue'
 
 export default {
   name: 'MainHeaderLayout',
   components: {
-    MxBtn,
-    MxDelimiter
+    MxBtn
     // MainHeaderInfo
   },
   props: {
@@ -50,15 +45,28 @@ export default {
       type: String,
       required: false,
       default: ''
-    }
-  },
-  data() {
-    return {
-      headerInfos: [
-        { title: 'адрес:', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
-        { title: 'телефон:', text: '8 (812) 123-45-67' },
-        { title: 'Режим работы:', text: 'пн-пт : 10:00 - 20:00/сб-вск : 12:00 - 20:00' }
-      ]
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    text: {
+      type: String,
+      required: true
+    },
+    customStyle: {
+      type: Object,
+      required: false,
+      default: () => ({})
+    },
+    btnText: {
+      type: String,
+      required: true
+    },
+    btnStyle: {
+      type: Object,
+      required: false,
+      default: () => ({})
     }
   }
 }
@@ -134,11 +142,9 @@ export default {
 }
 
 .header-content-title {
-  font-size: 150px;
   font-family: 'ReformaGrotesk';
   font-weight: 700;
   color: #db3138;
-  line-height: 188px;
   margin-bottom: 8px;
 }
 
@@ -157,5 +163,8 @@ export default {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap onto new lines */
   width: 100%;
+}
+.delim {
+  margin-top: 20px;
 }
 </style>

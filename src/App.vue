@@ -59,4 +59,7 @@ watch(
 </script>
 
 <style scoped>
+div {
+  overflow-x: hidden;
+}
 </style>
